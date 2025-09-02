@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+.gitignore
 
 # Object files
 *.o
@@ -53,3 +54,9 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Editor settings
+.vscode/
+
+#codex settings
+AGENTS.md
