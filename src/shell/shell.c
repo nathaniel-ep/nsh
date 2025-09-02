@@ -18,9 +18,9 @@ void destroy_shell_struct(nsh_t *shell)
     char **env_ptr = shell->env;
 
     if (shell->hard_input)
-        my_free(shell->hard_input, sizeof(char) * strlen(shell->hard_input));
+        my_free(shell->hard_input, sizeof(char) * strlen(shell->hard_input) + 1);
     while (*env_ptr) {
-        my_free(*env_ptr, strlen(*env_ptr));
+        my_free(*env_ptr, strlen(*env_ptr) + 1);
         env_ptr++;
     }
     my_free(shell->env, 0);

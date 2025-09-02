@@ -1,7 +1,6 @@
 #ifndef NSH_SHELL_H_
 #define NSH_SHELL_H_
 
-#endif /* !SHELL_H_ */
 
 
 typedef struct nsh_s {
@@ -14,3 +13,4 @@ typedef struct nsh_s {
 
 nsh_t *init_shell_struct(char **env);
 void destroy_shell_struct(nsh_t *shell);
+#endif /* !NSH_SHELL_H_ */

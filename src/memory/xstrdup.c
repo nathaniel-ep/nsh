@@ -6,7 +6,9 @@ char *xstrdup(char *src)
     if (!src)
         return NULL;
     str = strdup(src);
-    if (!str)
+    if (!str) {
+        perror("malloc");
         exit(84);
+    }
     return str;
 }
