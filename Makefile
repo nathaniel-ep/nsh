@@ -37,6 +37,7 @@ debug: re
 
 val: CFLAGS += $(DEBUGFLAGS)
 val: re
+	valgrind --leak-check=full --show-leak-kinds=definite,indirect,possible --errors-for-leak-kinds=definite,indirect --track-origins=yes ./$(NAME)
 tests_run: CFLAGS += --coverage
 tests_run:
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(SRC) tests/42sh_test.c -o unit_tests $(LDFLAGS) -lcriterion $(LDLIBS)

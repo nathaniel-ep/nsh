@@ -17,5 +17,7 @@
 #include "nsh/builtins.h"
 #include "nsh/io.h"
 #include "nsh/utils.h"
+#include "shell.h"
+#define MU __attribute_maybe_unused__
 
 #endif // NSH_NSH_H
