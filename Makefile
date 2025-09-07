@@ -24,6 +24,8 @@ $(NAME): $(OBJ) $(MAIN_OBJ)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@
 
 clean:
+	rm -f src/*.d
+	rm -f src/*.o
 	rm -f $(OBJ)
 	rm -f $(OBJ:.o=.d)
 	rm -f $(TOBJ)
