@@ -10,6 +10,12 @@ int handle_line_and_history(nsh_t *shell)
     format_line(shell);
     if (*(shell->input))
         add_history(shell->input);
+    for (int i = 0; BUILTIN_TAB[i].name; i++) {
+        if (builtin_match(BUILTIN_TAB[i].tag, BUILTIN_TAB[i].name, shell->input)) {
+            printf("builtin: %s detected\n", BUILTIN_TAB[i].name);
+            return 0;
+        }
+    }
     printf("wrote %s\n", shell->input);
     return 0;
 }
@@ -25,8 +31,7 @@ int main(MU int ac, MU char **av, char **env)
     nsh_t *shell = init_shell(env);
 
     shell->hard_input = readline("$> ");
-    while (shell->hard_input)
-    {
+    while (shell->hard_input)  {
         handle_line_and_history(shell);
         free_line(shell);
         shell->hard_input = readline("$> ");

@@ -1,8 +1,6 @@
 #ifndef NSH_SHELL_H_
 #define NSH_SHELL_H_
 
-
-
 typedef struct nsh_s {
     char *hard_input;
     char *input;
