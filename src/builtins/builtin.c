@@ -7,7 +7,7 @@ const builtins_t BUILTIN_TAB[] = {
     {TAG4S("setenv"),  "setenv",  &builtin_setenv},
     {TAG4S("unsetenv"),"unsetenv",&builtin_unsetenv},
     {TAG4S("echo"),    "echo",    NULL},
-    {TAG4S("history"), "history", NULL},
+    {TAG4S("history"), "history", &builtin_history},
     {TAG4S("set"),     "set",     NULL},
     {TAG4S("unset"),   "unset",   NULL},
     {TAG4S("which"),   "which",   NULL},
