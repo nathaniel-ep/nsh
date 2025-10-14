@@ -1,3 +1,6 @@
+#binary
+nsh
+
 # Prerequisites
 *.d
 .gitignore

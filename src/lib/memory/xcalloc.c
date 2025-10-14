@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "nsh/memory.h"
+#include "lib/memory.h"
 
 void *xcalloc(size_t nmemb, size_t size)
 {

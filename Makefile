@@ -24,6 +24,8 @@ $(NAME): $(OBJ) $(MAIN_OBJ)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@
 
 clean:
+	rm -f src/*.d
+	rm -f src/*.o
 	rm -f $(OBJ)
 	rm -f $(OBJ:.o=.d)
 	rm -f $(TOBJ)
@@ -40,7 +42,7 @@ val: re
 	valgrind --leak-check=full --show-leak-kinds=definite,indirect,possible --errors-for-leak-kinds=definite,indirect --track-origins=yes ./$(NAME)
 tests_run: CFLAGS += --coverage
 tests_run:
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(SRC) tests/42sh_test.c -o unit_tests $(LDFLAGS) -lcriterion $(LDLIBS)
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(SRC) tests/*.c -o unit_tests $(LDFLAGS) -lcriterion $(LDLIBS)
 	./unit_tests
 cvrg:
 	gcovr --exclude tests/

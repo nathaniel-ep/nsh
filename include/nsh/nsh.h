@@ -2,8 +2,8 @@
 #ifndef NSH_NSH_H
 #define NSH_NSH_H
 
+#include "lib/memory.h"
 #include "nsh/env.h"
-#include "nsh/memory.h"
 #include "nsh/signal.h"
 #include "nsh/term.h"
 #include "nsh/history.h"
