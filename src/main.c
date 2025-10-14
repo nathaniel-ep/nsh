@@ -22,7 +22,6 @@ int main(MU int ac, MU char **av, char **env)
     shell->hard_input = readline("$> ");
     while (shell->hard_input) {
         handle_line_and_history(shell);
-        builtin_exit(1, (char *[]){"exit", NULL}, shell);
         free_line(shell);
         shell->hard_input = readline("$> ");
     }
