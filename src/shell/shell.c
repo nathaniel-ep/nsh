@@ -44,8 +44,21 @@ void destroy_shell_struct(nsh_t *shell)
     my_free(shell);
 }
 
+void free_line(nsh_t *shell)
+{
+    if ((shell->hard_input)) {
+        my_free(shell->hard_input);
+        shell->hard_input = NULL;
+    }
+    if (shell->input) {
+        my_free(shell->input);
+        shell->input = NULL;
+    }
+}
+
 void leave_shell(nsh_t *shell)
 {
+    free_line(shell);
     if (shell->history_path)
         write_history(shell->history_path);
     destroy_shell_struct(shell);

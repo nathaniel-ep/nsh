@@ -1,5 +1,5 @@
 #include <string.h>
-#include "nsh/memory.h"
+#include "lib/memory.h"
 
 void my_free(void *ptr)
 {

@@ -4,4 +4,6 @@
 
 char **dup_env(char **env);
 char *get_home(void);
+char *build_variable_and_value(char *var, char *val);
+char *build_robust_var_to_cmp(char *var);
 #endif // NSH_ENV_H

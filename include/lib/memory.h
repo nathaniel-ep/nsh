@@ -6,4 +6,5 @@
 void *xcalloc(size_t nmemb, size_t size);
 void my_free(void *ptr);
 char *xstrdup(char *src);
+void free_arr(void **ptr);
 #endif // NSH_MEMORY_H

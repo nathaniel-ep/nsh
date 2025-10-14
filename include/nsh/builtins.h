@@ -8,7 +8,7 @@
 # error "TAG4/make_tag supposent little-endian"
 #endif
 
-typedef int (*builtin_fn)(int argc, char **argv, char **envp);
+typedef int (*builtin_fn)(int argc, char **argv, nsh_t *shell);
 
 typedef struct builtins_s {
     uint32_t   tag;     // 4 premiers octets du nom packés (little-endian)
@@ -46,5 +46,13 @@ static inline int builtin_match(uint32_t tag, const char *name, const char *q) {
 }
 
 extern const builtins_t BUILTIN_TAB[];
+
+// List of builtins function
+int builtin_env(int ac, char **av, nsh_t *shell);
+int builtin_setenv(int ac, char**av, nsh_t *shell);
+int builtin_unsetenv(int ac, char **av, nsh_t *shell);
+int builtin_exit(int ac, char **av, nsh_t *shell);
+int builtin_colon(int ac, char **av, nsh_t *shell);
+
 
 #endif // NSH_BUILTINS_H

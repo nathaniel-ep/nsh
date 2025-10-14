@@ -2,10 +2,10 @@
 
 const builtins_t BUILTIN_TAB[] = {
     {TAG4L("cd"),      "cd",      NULL},
-    {TAG4S("exit"),    "exit",    NULL},
-    {TAG4S("env"),     "env",     NULL},
-    {TAG4S("setenv"),  "setenv",  NULL},
-    {TAG4S("unsetenv"),"unsetenv",NULL},
+    {TAG4S("exit"),    "exit",    &builtin_exit},
+    {TAG4S("env"),     "env",     &builtin_env},
+    {TAG4S("setenv"),  "setenv",  &builtin_setenv},
+    {TAG4S("unsetenv"),"unsetenv",&builtin_unsetenv},
     {TAG4S("echo"),    "echo",    NULL},
     {TAG4S("history"), "history", NULL},
     {TAG4S("set"),     "set",     NULL},
@@ -20,6 +20,6 @@ const builtins_t BUILTIN_TAB[] = {
     {TAG4S("alias"),   "alias",   NULL},
     {TAG4S("unalias"), "unalias", NULL},
     {TAG4S("exec"),    "exec",    NULL},
-    {TAG4L(":"),      ":",       NULL},
+    {TAG4L(":"),      ":",       &builtin_colon},
     {0, NULL, NULL}
 };
