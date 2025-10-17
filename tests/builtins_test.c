@@ -221,3 +221,8 @@ Test(builtin_unsetenv, null_environment, .init = redirect_all)
     cr_expect_stdout_eq_str("");
     cr_expect_stderr_eq_str("");
 }
+
+// // Test(history_expansion, normal_test, .init = redirect_all)
+// {
+//     char *
+// }

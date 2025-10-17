@@ -9,9 +9,6 @@
 int handle_line_and_history(nsh_t *shell)
 {
     format_line(shell);
-    if (*(shell->input))
-        add_history(shell->input);
-    printf("wrote %s\n", shell->input);
     return 0;
 }
 
