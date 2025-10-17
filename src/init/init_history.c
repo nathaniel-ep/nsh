@@ -8,6 +8,7 @@
 
 int init_history(char *path)
 {
+    using_history();
     if (!path)
         return 84;
     read_history(path);

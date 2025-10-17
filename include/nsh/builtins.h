@@ -53,6 +53,6 @@ int builtin_setenv(int ac, char**av, nsh_t *shell);
 int builtin_unsetenv(int ac, char **av, nsh_t *shell);
 int builtin_exit(int ac, char **av, nsh_t *shell);
 int builtin_colon(int ac, char **av, nsh_t *shell);
-
+int builtin_history(int ac, char **av, nsh_t *shell);
 
 #endif // NSH_BUILTINS_H
